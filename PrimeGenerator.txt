@@ -1,0 +1,44 @@
+
+
+	import java.util.ArrayList;
+	import java.util.Scanner;
+
+	public class PrimeGenerator  {
+
+		public static void main(String[] args) {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Choose how many prime numbers you want to see:");
+			int b = sc.nextInt();
+			sc.close();
+
+			System.out.println(GetPrimes(2, 550).subList(0, b));
+
+		}
+
+		public static ArrayList<Integer> GetPrimes(int start, int end) {
+
+			ArrayList<Integer> GetPrimes = new ArrayList<Integer>();
+
+			for (int a = start; a < end; a++) {
+				boolean prime = true;
+
+				int i = 2;
+				while (i <= a / 2) {
+					if (a % i == 0) {
+						prime = false;
+						break;
+					}
+					i++;
+				}
+				if (prime) {
+					GetPrimes.add(a);
+				}
+			}
+
+			return GetPrimes;
+		}
+	}
+	
+	
+
+
